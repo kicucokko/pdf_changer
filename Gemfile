@@ -56,3 +56,4 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'devise'
 gem 'pry-rails'
+gem "active_hash"

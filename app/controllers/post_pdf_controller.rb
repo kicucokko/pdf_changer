@@ -5,10 +5,9 @@ class PostPdfController < ApplicationController
       format.pdf do
         post_pdf = PracticePdf::PostPdf.new().render
         send_data post_pdf,
-          filename: 'post_pdf.pdf',
+          filename: '無題.pdf',
           type: 'application/pdf',
           disposition: 'inline' 
       end
     end
   end
-end
