@@ -1,0 +1,10 @@
+<%=link_to "取引先を新規登録する",new_customer_path %><br>
+<% if @customers.present? %>
+ <% @customers.each do |customer|%>
+   ●<%= link_to customer.customer_name,edit_customer_path(customer.id) %><br>
+ <% end %>
+<% else %>
+  <div>登録された取引先はありません</div><br>
+<% end %>
+
+<%= link_to "戻る", root_path %>

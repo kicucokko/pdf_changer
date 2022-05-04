@@ -1,0 +1,29 @@
+<h2>取引先登録編集</h2>
+
+<%=form_with model:@customer,url: customer_path(@customer.id),method: :put, local: true do |f|%>
+  <%=f.label :取引先名 %><br>
+   <%= f.text_field :customer_name %><br>
+
+  <%=f.label :郵便番号 %><br>
+   <%= f.text_field :zip %><br>
+
+  <%=f.label :都道府県名 %><br>
+   <%= f.collection_select(:prefecture_id,Prefecture.all, :id, :name,{})  %><br>
+
+  <%=f.label :市町村名 %><br>
+   <%= f.text_field :city_block %><br>
+
+  <%=f.label :ビル名等 %><br>
+   <%= f.text_field :build %><br>
+
+  <%=f.label :電話番号 %><br>
+   <%= f.text_field :telephone %><br>
+
+  <%=f.label :ファックス番号 %><br>
+   <%= f.text_field :facsimile %><br>
+ 
+  <%= f.submit "変更する" %><br>
+  <%= link_to "削除する",customer_path,method: :delete %><br>
+  <%= link_to  "戻る",customers_path %>
+
+<% end %>
