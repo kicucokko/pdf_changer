@@ -1,0 +1,11 @@
+<%=link_to "商品情報を新規登録する",new_product_path %><br>
+<% if @products.present? %>
+  <% @products.each do |product|%>
+    ●<%=link_to product.product_name,edit_product_path(product.id) %>
+    <%= product.quantity %>個
+    <%= product.price %>円<br>
+  <% end %>
+<% else %>
+<p>登録された商品情報はありません</p>
+<% end %>
+<%= link_to "戻る",root_path %>

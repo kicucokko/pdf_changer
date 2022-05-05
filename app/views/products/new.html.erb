@@ -1,0 +1,13 @@
+<h2>商品情報新規登録</h2>
+
+<%= form_with model:@product, url: products_path(@product.id),local: true do |f|%>
+<%=f.label :商品名 %><br>
+ <%=f.text_field :product_name %><br>
+
+<%=f.label :個数 %><br>
+ <%=f.text_field :quantity,placeholder: 1 %><br>
+
+<%=f.label :価格 %><br>
+ <%=f.text_field :price %><br>
+<%= f.submit "登録する"%>
+<% end %>
